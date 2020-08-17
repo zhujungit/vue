@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <ul>
+        <li v-for="(val,key,index) in user">{{index}}{{val}}:{{key}}
+
+        </li>
+    </ul>
+    <ul>
+        <li v-for="(user,index) in users">
+            {{index+1}},{{user.name}}-{{user.gender}}- {{user.age}}
+
+        </li>
+    </ul>
+    <input type="checkbox" v-model="language" value="Java" />Java<br/>
+    <input type="checkbox" v-model="language" value="PHP" />PHP<br/>
+    <input type="checkbox" v-model="language" value="Swift" />Swift<br/>
+    <h1>
+        你选择了：{{language.join(',')}}
+    </h1>
+</div>
+<script src="./node_modules/vue/dist/vue.js"></script>
+<script type="text/javascript">
+    var vm = new Vue({
+        el:"#app",
+        data:{
+            language: [],
+            users:[
+                {name:'柳岩', gender:'女', age: 21},
+                {name:'峰哥', gender:'男', age: 18},
+                {name:'范冰冰', gender:'女', age: 24},
+                {name:'刘亦菲', gender:'女', age: 18},
+                {name:'古力娜扎', gender:'女', age: 25}],
+
+            user: {name:'柳岩', gender:'女', age: 21},
+        },
+
+    })
+</script>
+
+
+</body>
+</html>
