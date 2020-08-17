@@ -6,6 +6,10 @@
 </head>
 <body>
 <div id="app">
+    <input type="button" value="点我啊" @click="show=!show">
+    <span v-if="show">你看见我了 说明我是true if</span><br>
+    <span v-show="show">你看见我了 说明我是true show</span><br>
+    <hr>
     <ul>
         <li v-for="(val,key,index) in user">{{index}}{{val}}:{{key}}
 
@@ -38,7 +42,12 @@
                 {name:'古力娜扎', gender:'女', age: 25}],
 
             user: {name:'柳岩', gender:'女', age: 21},
+            show:true
+
+
+
         },
+
 
     })
 </script>
