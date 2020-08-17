@@ -10,7 +10,24 @@
     }
 </style>
 <body>
+
 <div id="app">
+
+<div>
+{{birth()}}
+
+</div>
+    <div>
+        {{birth1}}
+    </div>
+
+
+    <div>
+        {{new Date(birthday).getFullYear()+"年"+new Date(birthday).getMonth()+"月"+new Date(birthday).getDay()+"日"}}
+
+    </div>
+<hr>
+
     <input type="text" v-model="store">
     <input type="button" v-bind:class="{active: store>0}" value="加入购物车">
 <hr>
@@ -59,6 +76,22 @@
             random:0,
             value:"点我呀",
             store:0,
+            birthday:1529032123201 // 毫秒值
+        },
+
+        methods:{
+
+            birth(){
+                const date=new Date(this.birthday);
+                return date.getFullYear() + "-" + date.getMonth() + "-" + date.getDay();
+            },
+
+        },
+        computed:{//计算属性，里面也是定义方法，但这些方法必须有返回值，计算属性像数据模型一样使用
+            birth1(){
+                const date=new Date(this.birthday);
+                return date.getFullYear() + "-" + date.getMonth() + "-" + date.getDay();
+            },
         },
 
     })
