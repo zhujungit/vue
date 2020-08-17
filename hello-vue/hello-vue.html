@@ -6,8 +6,13 @@
 </head>
 <body>
 <div id="app">
-    <input type="button" value="点我啊" @click="show=!show">
-    <span v-if="show">你看见我了 说明我是true if</span><br>
+
+    <input type="button" value="点我啊,生成随机数" @click="random=Math.random()">{{random}}
+    <span v-if="random>0.75">你看见我了 说明我是大于0.75</span>
+    <span v-else-if="random>0.5">你看见我了 说明我是大于0.5</span>
+    <span v-else-if="random>0.25">你看见我了 说明我是大于0.25</span>
+    <span v-else>你看见我了 说明我是大于0</span><br>
+
     <span v-show="show">你看见我了 说明我是true show</span><br>
     <hr>
     <ul>
@@ -42,8 +47,8 @@
                 {name:'古力娜扎', gender:'女', age: 25}],
 
             user: {name:'柳岩', gender:'女', age: 21},
-            show:true
-
+            show:true,
+            random:0,
         },
 
     })
