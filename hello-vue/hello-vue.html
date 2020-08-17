@@ -4,10 +4,17 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
+<style>
+    .active{
+
+    }
+</style>
 <body>
 <div id="app">
-
-    <input type="button" value="点我啊,生成随机数" @click="random=Math.random()">{{random}}
+    <input type="text" v-model="store">
+    <input type="button" v-bind:class="{active: store>0}" value="加入购物车">
+<hr>
+    <input type="button" v-bind:value="value"  @click="random=Math.random()">{{random}}
     <span v-if="random>0.75">你看见我了 说明我是大于0.75</span>
     <span v-else-if="random>0.5">你看见我了 说明我是大于0.5</span>
     <span v-else-if="random>0.25">你看见我了 说明我是大于0.25</span>
@@ -49,6 +56,8 @@
             user: {name:'柳岩', gender:'女', age: 21},
             show:true,
             random:0,
+            value:"点我呀",
+            store:0,
         },
 
     })
