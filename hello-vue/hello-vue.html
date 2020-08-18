@@ -12,6 +12,7 @@
 <body>
 
 <div id="app">
+    <input type="text" v-model="search">
 
 <div>
 {{birth()}}
@@ -76,9 +77,15 @@
             random:0,
             value:"点我呀",
             store:0,
-            birthday:1529032123201 // 毫秒值
+            birthday:1529032123201, // 毫秒值
+            search:""
         },
-
+        watch:{
+          search(newval1,oldval2){
+              //发送异步请求到后台接口
+console.log(newval1,oldval2)
+          }
+        },
         methods:{
 
             birth(){
